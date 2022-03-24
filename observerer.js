@@ -1,3 +1,4 @@
+//Defining skip intro button class name.
 let skipIntro = "watch-video--skip-content-button";
 
 function simulateClick(knapp) {
@@ -14,16 +15,16 @@ function simulateClick(knapp) {
     }
 
 function callback() {
-  //Sjekker om Skip knappen eksisterer
+  //Checking if the Skip button exists
   if(document.getElementsByClassName(skipIntro)[0]){
     console.log("skip")
     simulateClick(skipIntro);
   } 
 }
 
-//Oppretter en observer
+//Creating observer
 const observer = new MutationObserver(callback);
-// Definerer hvilken node som skal observeres
-let maal = document.querySelector('body')
-//Starter observeringen av body
-observer.observe(maal, {subtree:true, childList: true});
+// Defining which node to observe
+let targetNode = document.querySelector('body')
+//Start observing the targetNode
+observer.observe(targetNode, {subtree:true, childList: true});
