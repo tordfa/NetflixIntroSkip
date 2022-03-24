@@ -1,0 +1,19 @@
+{
+  "name": "Skip Intro Netlflix",
+  "description": "Skip Netflix intro!",
+  "version": "1.0",
+  "manifest_version": 3,
+
+  "action": {
+    
+    "default_icon": "hello.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.netflix.com/*"],
+      "js": ["observerer.js"]
+    }
+  ]
+ 
+}
